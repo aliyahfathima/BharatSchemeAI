@@ -1,0 +1,196 @@
+﻿.stApp {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+.block-container {
+    max-width: 1180px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+/* Keep the Streamlit header and theme menu visible */
+header[data-testid="stHeader"] {
+    display: block !important;
+    background: transparent !important;
+}
+
+/* Left aligned headings */
+h1, h2, h3, h4 {
+    color: var(--text-color) !important;
+    text-align: left !important;
+    font-weight: 700 !important;
+}
+
+p, label, li {
+    color: var(--text-color);
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background: var(--secondary-background-color);
+    border-right: 1px solid rgba(128,128,128,.2);
+}
+
+[data-testid="stSidebar"] * {
+    color: var(--text-color);
+}
+
+/* Cards */
+[data-testid="stForm"],
+[data-testid="stExpander"],
+[data-testid="stMetric"] {
+    background: var(--secondary-background-color) !important;
+    color: var(--text-color) !important;
+    border: 1px solid rgba(128,128,128,.22);
+    border-radius: 14px;
+    box-shadow: 0 3px 14px rgba(0,0,0,.05);
+}
+
+[data-testid="stForm"] {
+    padding: 1.4rem;
+}
+
+/* Inputs */
+.stTextInput input,
+.stNumberInput input,
+.stTextArea textarea {
+    background: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* Buttons */
+.stButton > button,
+.stFormSubmitButton > button {
+    background: #e97816 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 9px !important;
+    min-height: 44px;
+    font-weight: 700 !important;
+}
+
+.stButton > button:hover,
+.stFormSubmitButton > button:hover {
+    background: #c95f0b !important;
+}
+
+/* Results */
+[data-testid="stAlert"],
+[data-testid="stExpander"] {
+    border-radius: 12px;
+}
+
+.footer {
+    text-align: left;
+    padding: 24px 0;
+    margin-top: 30px;
+    border-top: 1px solid rgba(128,128,128,.2);
+    opacity: .8;
+}
+
+@media (max-width: 768px) {
+    .block-container {
+        padding: 1rem;
+    }
+    [data-testid="stForm"] {
+        padding: .8rem;
+    }
+}
+
+/* ===== BHARATSCHEME APPLICATION PAGE ===== */
+
+.block-container {
+    max-width: 1250px !important;
+    padding-top: 1.5rem !important;
+}
+
+/* Main form container */
+[data-testid="stForm"] {
+    background: var(--secondary-background-color);
+    border: 1px solid rgba(120,145,165,0.25);
+    border-radius: 20px;
+    padding: 28px !important;
+    box-shadow: 0 5px 22px rgba(20,40,60,0.06);
+}
+
+/* Section headings */
+.stMarkdown h1,
+.stMarkdown h2,
+.stMarkdown h3 {
+    letter-spacing: -0.4px;
+}
+
+/* Input labels */
+[data-testid="stWidgetLabel"] p {
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+
+/* Text inputs, number inputs and dropdowns */
+div[data-baseweb="input"],
+div[data-baseweb="select"],
+div[data-baseweb="textarea"] {
+    border-radius: 10px !important;
+}
+
+div[data-baseweb="input"] > div,
+div[data-baseweb="select"] > div,
+div[data-baseweb="textarea"] > div {
+    border-radius: 10px !important;
+    border-color: rgba(120,145,165,0.4) !important;
+}
+
+/* Focused fields */
+div[data-baseweb="input"]:focus-within,
+div[data-baseweb="select"]:focus-within,
+div[data-baseweb="textarea"]:focus-within {
+    border-color: #159b83 !important;
+    box-shadow: 0 0 0 2px rgba(21,155,131,0.12);
+}
+
+/* Primary buttons */
+.stButton > button,
+.stFormSubmitButton > button {
+    background: #087f70 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 12px 20px !important;
+    font-weight: 700 !important;
+    min-height: 46px;
+    transition: 0.2s ease;
+}
+
+.stButton > button:hover,
+.stFormSubmitButton > button:hover {
+    background: #06685d !important;
+    box-shadow: 0 5px 14px rgba(8,127,112,0.2);
+}
+
+/* Info messages */
+[data-testid="stAlert"] {
+    border-radius: 12px !important;
+}
+
+/* Results expanders */
+[data-testid="stExpander"] {
+    border: 1px solid rgba(120,145,165,0.25) !important;
+    border-radius: 14px !important;
+    margin-bottom: 12px;
+}
+
+/* Metrics */
+[data-testid="stMetric"] {
+    background: var(--secondary-background-color);
+    padding: 16px;
+    border: 1px solid rgba(120,145,165,0.2);
+    border-radius: 14px;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+    [data-testid="stForm"] {
+        padding: 16px !important;
+    }
+}
