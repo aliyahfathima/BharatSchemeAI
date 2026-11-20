@@ -1,211 +1,391 @@
-﻿import streamlit as st
+﻿
+import streamlit as st
+from textwrap import dedent
+
+
+def render_html(content):
+    """Render HTML directly without Markdown parsing."""
+    st.html(dedent(content))
+
 
 def show_landing_page():
-    st.markdown("""
-    <style>
-    [data-testid="stDeployButton"] {display:none !important;}
-    [data-testid="stToolbar"] {background:transparent;}
-    .block-container {
-        max-width: 1250px;
-        padding-top: 1rem;
-        padding-bottom: 2rem;
-    }
-    .landing-nav {
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        padding:12px 4px 22px;
-        border-bottom:1px solid rgba(120,140,160,.2);
-    }
-    .brand {
-        font-size:24px;
-        font-weight:800;
-        color:var(--text-color);
-    }
-    .brand span {color:#159b83;}
-    .nav-tag {
-        color:var(--text-color);
-        font-size:14px;
-    }
-    .hero {
-        margin-top:28px;
-        padding:55px 48px;
-        border-radius:24px;
-        background:linear-gradient(110deg,rgba(8,35,57,.96),rgba(10,91,91,.83)),
-        url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1600&q=85');
-        background-size:cover;
-        background-position:center;
-        color:white;
-        min-height:350px;
-    }
-    .hero-tag {
-        display:inline-block;
-        background:rgba(255,255,255,.15);
-        border:1px solid rgba(255,255,255,.25);
-        padding:7px 13px;
-        border-radius:30px;
-        font-size:13px;
-        margin-bottom:18px;
-    }
-    .hero h1 {
-        color:white !important;
-        font-size:clamp(34px,5vw,55px);
-        line-height:1.12;
-        max-width:650px;
-        margin:0 0 18px 0;
-    }
-    .hero p {
-        color:#e4f1f2 !important;
-        font-size:17px;
-        line-height:1.7;
-        max-width:590px;
-    }
-    .section-title {
-        font-size:27px;
-        font-weight:750;
-        color:var(--text-color);
-        margin:38px 0 8px;
-    }
-    .section-sub {
-        color:var(--text-color);
-        opacity:.72;
-        margin-bottom:20px;
-    }
-    .category-card {
-        background:var(--secondary-background-color);
-        border:1px solid rgba(130,150,170,.22);
-        border-radius:16px;
-        padding:20px 16px;
-        min-height:130px;
-    }
-    .category-icon {font-size:30px;margin-bottom:12px;}
-    .category-name {
-        font-size:16px;
-        font-weight:700;
-        color:var(--text-color);
-    }
-    .category-desc {
-        font-size:13px;
-        color:var(--text-color);
-        opacity:.7;
-        margin-top:5px;
-    }
-    .step-card {
-        padding:20px;
-        border-radius:15px;
-        border:1px solid rgba(130,150,170,.22);
-        background:var(--secondary-background-color);
-        min-height:135px;
-    }
-    .step-number {
-        color:#159b83;
-        font-weight:800;
-        font-size:14px;
-    }
-    .step-card h4 {color:var(--text-color);margin:10px 0 6px;}
-    .step-card p {color:var(--text-color);opacity:.72;font-size:14px;}
-    .trust {
-        margin-top:30px;
-        padding:22px;
-        border-radius:16px;
-        background:rgba(21,155,131,.09);
-        border:1px solid rgba(21,155,131,.2);
-        color:var(--text-color);
-    }
-    .footer-text {
-        text-align:center;
-        color:var(--text-color);
-        opacity:.65;
-        font-size:13px;
-        padding:28px 0 5px;
-    }
-    </style>
 
-    <div class="landing-nav">
-      <div class="brand">Bharat<span>Scheme</span> AI</div>
-      <div class="nav-tag">Government Scheme Discovery Assistant</div>
+    # =====================================
+    # HEADER AND HERO SECTION
+    # =====================================
+
+    render_html("""
+    <div class="landing-shell">
+
+        <nav class="landing-nav">
+            <div class="landing-brand">
+                <span class="brand-icon">🇮🇳</span>
+                <span>Bharat<span class="brand-orange">Scheme</span> AI</span>
+            </div>
+
+            <div class="nav-tag">
+                GOVERNMENT SCHEME DISCOVERY ASSISTANT
+            </div>
+        </nav>
+
+        <section class="hero-section">
+
+            <div class="hero-content">
+
+                <div class="hero-tag">
+                    <span class="hero-dot"></span>
+                    AI-POWERED CITIZEN ASSISTANCE
+                </div>
+
+                <h1>
+                    Discover Government Schemes.
+                    <span>Unlock Your Benefits.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Find Central and State Government schemes that may
+                    match your profile. Understand benefits, eligibility
+                    and application procedures — all in one place.
+                </p>
+
+                <div class="hero-highlights">
+                    <span>✓ Personalised Discovery</span>
+                    <span>✓ Eligibility Guidance</span>
+                    <span>✓ Official Sources</span>
+                </div>
+
+                <div class="hero-note">
+                    One intelligent guide for every citizen.
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="visual-card">
+
+                    <div class="visual-top">
+                        <span class="visual-icon">🇮🇳</span>
+                        <span class="visual-status">SMART DISCOVERY</span>
+                    </div>
+
+                    <div class="visual-title">
+                        Your Benefits,
+                        <span>Within Reach.</span>
+                    </div>
+
+                    <div class="visual-description">
+                        Explore opportunities designed for your needs.
+                    </div>
+
+                    <div class="visual-divider"></div>
+
+                    <div class="visual-feature">
+                        <span class="feature-symbol">✦</span>
+                        <div>
+                            <strong>AI-Powered Search</strong>
+                            <small>Discover relevant schemes</small>
+                        </div>
+                    </div>
+
+                    <div class="visual-feature">
+                        <span class="feature-symbol">✓</span>
+                        <div>
+                            <strong>Eligibility Guidance</strong>
+                            <small>Understand who can apply</small>
+                        </div>
+                    </div>
+
+                    <div class="visual-feature">
+                        <span class="feature-symbol">↗</span>
+                        <div>
+                            <strong>Source-Based Results</strong>
+                            <small>Explore supporting information</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="floating-card">
+                    <span>✦</span>
+                    Making scheme discovery simpler
+                </div>
+
+            </div>
+
+        </section>
+
     </div>
+    """)
 
-    <section class="hero">
-      <div class="hero-tag">🇮🇳 AI-powered citizen assistance</div>
-      <h1>Find Government Schemes You Deserve.</h1>
-      <p>
-        Discover Central and State Government welfare schemes that may
-        match your profile. Understand eligibility, benefits and how to apply
-        — all in one place.
-      </p>
-    </section>
-    """, unsafe_allow_html=True)
+    render_html('<div class="landing-spacer"></div>')
 
-    st.markdown("<div style='height:14px'></div>", unsafe_allow_html=True)
-    left, right = st.columns([1, 1])
+    # =====================================
+    # GET STARTED SECTION
+    # =====================================
+
+    left, right = st.columns([1.15, 0.85], gap="large")
 
     with left:
-        st.markdown("### Start your scheme discovery")
-        st.write("Answer a few simple questions. Our AI assistant will analyse your profile and find relevant schemes.")
 
-        if st.button("Discover My Schemes  →", type="primary", use_container_width=True):
-            return True
+        render_html("""
+        <div class="start-content">
+
+            <div class="section-eyebrow">GET STARTED</div>
+
+            <h2>Start your scheme discovery</h2>
+
+            <p>
+                Share a few basic details about yourself.
+                Our AI assistant will help identify government
+                schemes that may be relevant to you.
+            </p>
+
+            <div class="start-points">
+                <span>✓ Simple profile-based search</span>
+                <span>✓ Central and State scheme discovery</span>
+                <span>✓ Easy-to-understand information</span>
+            </div>
+
+        </div>
+        """)
+
+        clicked = st.button(
+            "Discover My Schemes  →",
+            type="primary",
+            use_container_width=True,
+            key="landing_discover_button"
+        )
+
+        render_html("""
+        <div class="privacy-note">
+            🔒 No Aadhaar number, bank details or OTP required.
+        </div>
+        """)
 
     with right:
-        st.markdown("""
-        <div class="trust">
-          <h3>Discover benefits with clarity</h3>
-          <p>✓ Personalised scheme discovery</p>
-          <p>✓ Eligibility explained in simple language</p>
-          <p>✓ Benefits and required documents</p>
-          <p>✓ Links to official government sources</p>
-          <p style="font-size:12px;opacity:.75">
-          BharatScheme AI is an independent prototype, not an official government website.
-          </p>
-        </div>
-        """, unsafe_allow_html=True)
 
-    st.markdown("<div class='section-title'>Explore scheme categories</div>", unsafe_allow_html=True)
-    st.markdown("<div class='section-sub'>Discover support across important areas of everyday life.</div>", unsafe_allow_html=True)
+        render_html("""
+        <div class="trust-card">
+
+            <div class="trust-icon">✦</div>
+
+            <h3>Discover benefits with clarity</h3>
+
+            <p>Your journey towards informed access.</p>
+
+            <div class="trust-item">
+                <span>01</span>
+                <div>
+                    <strong>Personalised Discovery</strong>
+                    <small>Find schemes based on your profile.</small>
+                </div>
+            </div>
+
+            <div class="trust-item">
+                <span>02</span>
+                <div>
+                    <strong>Simple Eligibility</strong>
+                    <small>Understand eligibility conditions.</small>
+                </div>
+            </div>
+
+            <div class="trust-item">
+                <span>03</span>
+                <div>
+                    <strong>Benefits &amp; Documents</strong>
+                    <small>Learn about benefits and required documents.</small>
+                </div>
+            </div>
+
+            <div class="trust-item">
+                <span>04</span>
+                <div>
+                    <strong>Source Information</strong>
+                    <small>Review available official source links.</small>
+                </div>
+            </div>
+
+        </div>
+        """)
+
+    render_html('<div class="landing-section-gap"></div>')
+
+    # =====================================
+    # CATEGORIES SECTION
+    # =====================================
+
+    render_html("""
+    <div class="section-heading">
+
+        <div class="section-eyebrow">EXPLORE OPPORTUNITIES</div>
+
+        <h2>Government support for every stage of life</h2>
+
+        <p>
+            Explore major areas where government schemes provide support.
+        </p>
+
+    </div>
+    """)
 
     categories = [
-        ("🌾", "Agriculture", "Support for farmers"),
-        ("🎓", "Education", "Scholarships and learning"),
-        ("🏥", "Healthcare", "Health and family welfare"),
-        ("💼", "Employment", "Jobs and skill development"),
-        ("👩", "Women & Child", "Women and child welfare"),
+        (
+            "🌾",
+            "Agriculture",
+            "Support for farmers and rural communities",
+            "cat-green"
+        ),
+        (
+            "🎓",
+            "Education",
+            "Scholarships and student assistance",
+            "cat-orange"
+        ),
+        (
+            "🏥",
+            "Healthcare",
+            "Health protection and medical support",
+            "cat-blue"
+        ),
+        (
+            "💼",
+            "Employment",
+            "Skills, jobs and livelihood opportunities",
+            "cat-purple"
+        ),
+        (
+            "👩‍👧",
+            "Women &amp; Child",
+            "Women empowerment and child welfare",
+            "cat-pink"
+        ),
     ]
 
-    cols = st.columns(5)
-    for col, item in zip(cols, categories):
+    def show_category(item):
+
+        icon, title, description, color_class = item
+
+        render_html(f"""
+        <div class="category-card {color_class}">
+
+            <div class="category-icon">{icon}</div>
+
+            <h3>{title}</h3>
+
+            <p>{description}</p>
+
+        </div>
+        """)
+
+    # First row: 3 categories
+    row_one = st.columns(3, gap="medium")
+
+    for col, item in zip(row_one, categories[:3]):
         with col:
-            st.markdown(f"""
-            <div class="category-card">
-              <div class="category-icon">{item[0]}</div>
-              <div class="category-name">{item[1]}</div>
-              <div class="category-desc">{item[2]}</div>
-            </div>
-            """, unsafe_allow_html=True)
+            show_category(item)
 
-    st.markdown("<div class='section-title'>How it works</div>", unsafe_allow_html=True)
-    steps = [
-        ("01", "Share your profile", "Enter basic details such as age, state and occupation."),
-        ("02", "AI analyses schemes", "Relevant scheme information is checked against your profile."),
-        ("03", "Understand and apply", "Review possible matches, documents and official application links."),
-    ]
+    # Second row: 2 centered categories
+    row_two = st.columns([0.5, 1, 1, 0.5], gap="medium")
 
-    cols = st.columns(3)
-    for col, item in zip(cols, steps):
+    for col, item in zip(
+        [row_two[1], row_two[2]],
+        categories[3:]
+    ):
         with col:
-            st.markdown(f"""
-            <div class="step-card">
-              <div class="step-number">STEP {item[0]}</div>
-              <h4>{item[1]}</h4>
-              <p>{item[2]}</p>
-            </div>
-            """, unsafe_allow_html=True)
+            show_category(item)
 
-    st.markdown("""
-    <div class="footer-text">
-      BharatScheme AI · Discover. Understand. Apply.<br>
-      Independent AI prototype · Always verify eligibility on official government portals.
+    render_html('<div class="landing-section-gap"></div>')
+
+    # =====================================
+    # HOW IT WORKS SECTION
+    # =====================================
+
+    render_html("""
+    <div class="section-heading">
+
+        <div class="section-eyebrow">HOW IT WORKS</div>
+
+        <h2>Three simple steps to get started</h2>
+
+        <p>
+            From your profile to relevant government scheme information.
+        </p>
+
     </div>
-    """, unsafe_allow_html=True)
+    """)
 
-    return False
+    steps = [
+        (
+            "01",
+            "Share Your Profile",
+            "Enter basic details such as your state, age, occupation and other relevant information."
+        ),
+        (
+            "02",
+            "AI Analyses Schemes",
+            "The system searches available scheme information and analyses potential matches."
+        ),
+        (
+            "03",
+            "Understand &amp; Apply",
+            "Review scheme benefits, eligibility details and available application sources."
+        ),
+    ]
+
+    step_cols = st.columns(3, gap="medium")
+
+    for col, (number, title, description) in zip(step_cols, steps):
+
+        with col:
+
+            render_html(f"""
+            <div class="step-card">
+
+                <div class="step-number">{number}</div>
+
+                <h3>{title}</h3>
+
+                <p>{description}</p>
+
+            </div>
+            """)
+
+    # =====================================
+    # BOTTOM BANNER AND FOOTER
+    # =====================================
+
+    render_html("""
+    <div class="bottom-banner">
+
+        <div>
+            <div class="banner-eyebrow">BHARATSCHEME AI</div>
+
+            <h2>Every Citizen. Every Opportunity.</h2>
+
+            <p>Discover. Understand. Apply.</p>
+        </div>
+
+        <div class="banner-symbol">🇮🇳</div>
+
+    </div>
+
+    <footer class="landing-footer">
+
+        <div class="footer-brand">
+            Bharat<span>Scheme</span> AI
+        </div>
+
+        <p>
+            Built with Python, Streamlit, Google Gemini and Tavily
+        </p>
+
+        <small>
+            An independent prototype for government scheme discovery.
+            Always verify scheme details with the relevant official authority.
+        </small>
+
+    </footer>
+    """)
+
+    return clicked
